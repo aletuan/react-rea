@@ -3,9 +3,13 @@ import ReactDOM from "react-dom";
 import CardContainer from "./components/CardContainer";
 import CardItem from "./components/CardItem";
 
-ReactDOM.render(
-<CardContainer>
-   <CardItem />
-</CardContainer>, 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './reducers';
 
-document.getElementById("index"));
+ReactDOM.render(
+<Provider store={createStore(reducer)}>
+   <CardContainer>
+      <CardItem />
+   </CardContainer>
+</Provider> ,document.getElementById("index"));
