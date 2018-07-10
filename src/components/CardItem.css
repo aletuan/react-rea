@@ -1,0 +1,12 @@
+.cardStyle {
+   margin: 10px;
+}
+
+.cardHeaderStyle {
+   background: #cdc;
+   display: "flex d-flex";
+}
+
+.cardLogoStyle {
+   width: 100px;
+}
