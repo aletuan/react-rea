@@ -1,41 +1,19 @@
 import React, {Component} from 'react';
-import { Container, Row, Col, CardColumns, Card, CardHeader, CardBody} from 'reactstrap';
-import CardItem from './CardItem';
+import { Container, Row, Col} from 'reactstrap';
+import CardContainer from './CardContainer';
 
 import { connect } from 'react-redux';
 
-class CardContainer extends Component {
+class PageContainer extends Component {
    render() {
       return (
          <Container>
             <Row>
                <Col>
-                  <div style={{display: "flex", justifyContent: "center"}}>Results</div>
-                  <Container style={{borderStyle: "dotted", borderWidth: "1px"}}>
-                     {                        
-                        this.props.results.map(item => {
-                           // destructruct nested object
-                           const {id, price, mainImage, agency} = item;
-                           const {logo, brandingColors: {primary}} = agency;
-
-                           return <CardItem key={id} id={id} price={price} mainImage={mainImage} logo={logo} primary={primary} />;
-                        })
-                     }                  
-                  </Container>
+                  <CardContainer title="Results" cardItems={this.props.results} />
                </Col>
                <Col>
-                  <div style={{display: "flex", justifyContent: "center"}}>Saved Properties</div>
-                  <Container style={{borderStyle: "dotted", borderWidth: "1px"}}>
-                     {
-                        this.props.saved.map(item => {
-                           // destructruct nested object
-                           const {id, price, mainImage, agency} = item;
-                           const {logo, brandingColors: {primary}} = agency;
-
-                           return <CardItem key={id} id={id} price={price} mainImage={mainImage} logo={logo} primary={primary} />;
-                        })
-                     }                  
-                  </Container>                  
+                  <CardContainer title="Saved Properties" cardItems={this.props.saved} />
                </Col>
             </Row>
          </Container>
@@ -50,4 +28,4 @@ const mapStateToProps = state => {
    };
 };
 
-export default connect(mapStateToProps)(CardContainer);
+export default connect(mapStateToProps)(PageContainer);
