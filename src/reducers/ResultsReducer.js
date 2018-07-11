@@ -1,3 +1,10 @@
 import data from './data.json';
 
-export default () => data.results;
+const INITIAL_STATE = data.results;
+
+export default (state = INITIAL_STATE, action) => {
+   switch (action.type) {
+      default: 
+         return state;
+   };
+};
