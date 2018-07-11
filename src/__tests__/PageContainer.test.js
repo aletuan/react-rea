@@ -4,9 +4,6 @@ import { shallow } from 'enzyme';
 import PageContainer from '../components/PageContainer';
 import { CardContainer } from '../components/CardContainer';
 import { Container, Row, Col} from 'reactstrap';
-import ResultsReducer from '../reducers/ResultsReducer';
-import SavedReducer from '../reducers/SavedReducer';
-import data from '../reducers/data.json';
 
 describe('PageContainer layout test', () => {
 
@@ -45,28 +42,6 @@ describe('PageContainer layout test', () => {
       const wrapper = shallow(<PageContainer store={store} />);
       const answer = wrapper.html().match(/cardContainerHeaderStyle/g).length;
       expect(answer).toBe(2);
-   });
-
-});
-
-describe('PageContainer confirm loading reducer', () => {
-   const initialState = {
-      results: data.results,
-      saved: data.saved
-   };
-
-   const mockStore = configureStore();
-   let store;
-   
-   beforeEach(() => {
-      store = mockStore(initialState);
-   });
-
-   it('should loading initial items from json', () => {
-      const action = { type: 'loading_action' };
-      // need to confirm loading state
-      expect(ResultsReducer(undefined, action)).toEqual(initialState.results);
-      expect(SavedReducer(undefined, action)).toEqual(initialState.saved);
    });
 
 });
