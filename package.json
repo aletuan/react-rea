@@ -4,7 +4,7 @@
   "description": "## Description Require to display items list with some properties and operation to add / remove item from a list",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
