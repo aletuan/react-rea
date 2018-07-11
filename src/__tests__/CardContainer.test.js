@@ -17,7 +17,7 @@ describe('Destructure nested object test', () => {
 
    it('should get right object from nested', () => {
       const card = cardItem(item);
-      expect(card.id).toEqual(item.id);
+      expect(card.cardId).toEqual(item.id);
       expect(card.logo).toEqual(item.agency.logo);
       expect(card.mainImage).toEqual(item.mainImage);
       expect(card.primary).toEqual(item.agency.brandingColors.primary);

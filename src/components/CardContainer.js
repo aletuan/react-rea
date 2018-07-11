@@ -22,7 +22,7 @@ const cardItem = (item) => {
    const {logo, brandingColors: {primary}} = agency;
 
    return {
-      id: item.id,
+      cardId: item.id,
       price: item.price,
       mainImage: item.mainImage,
       logo,

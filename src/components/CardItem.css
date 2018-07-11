@@ -9,3 +9,21 @@
 .cardLogoStyle {
    width: 150px;
 }
+
+.cardButtonStyle {
+   display: none;
+}
+
+.cardImageStyle:hover .cardButtonStyle {
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   opacity: 0.9;
+   transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   color: white;
+   border-radius: 5px;
+}
+
+
