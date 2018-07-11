@@ -30,4 +30,7 @@ const cardItem = (item) => {
    };
 }
 
-export default CardContainer;
+module.exports = {
+   cardItem,
+   CardContainer
+};
