@@ -9,19 +9,14 @@ const CardContainer = ({title, cardItems}) => {
          <div className="cardContainerHeaderStyle">{title}</div>
          <Container className="cardContainerBodyStyle">
          {                        
-            cardItems.map(item => {
-               // destructruct nested object
-               //const {id, price, mainImage, agency} = item;
-               //const {logo, brandingColors: {primary}} = agency;
-                  
-               return <CardItem key={item.id} cardItem={cardItem(item)} />;
-            })
+            cardItems.map(item => <CardItem key={item.id} cardItem={cardItem(item)} />)
          }                  
          </Container>
       </div>
    );
 };
 
+// destructruct nested object
 const cardItem = (item) => {
    const {agency} = item;
    const {logo, brandingColors: {primary}} = agency;

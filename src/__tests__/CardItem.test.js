@@ -7,10 +7,10 @@ describe('CardItem layout test', () => {
 
    let wrapper;
    let item = {
-         primary: "#fff",
-         logo: "abc",
-         mainImage: "abc",
-         price: "$123,789"      
+      primary: "#fff",
+      logo: "abc",
+      mainImage: "abc",
+      price: "$123,789"
    };
 
    beforeEach(() => {
