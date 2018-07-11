@@ -9,11 +9,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './CardItem.css';
 
-const CardIem = ({id, price, mainImage, logo}) => {
+const CardIem = ({id, price, mainImage, logo, primary}) => {
    return (
       <div  className="cardStyle">
          <Card>
-            <CardHeader className="cardHeaderStyle">
+            <CardHeader className="cardHeaderStyle" style={{background:primary}}>
                <CardImg className="cardLogoStyle" src={logo} />
             </CardHeader>
             <CardBody>

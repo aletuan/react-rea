@@ -15,10 +15,31 @@ class CardContainer extends Component {
                         Results
                      </Row>
                      {
-                        this.props.results.map(({id, price, mainImage, agency: {logo}}) => 
-                        <CardItem id={id} price={price} mainImage={mainImage} logo={logo} />)
+                        this.props.results.map(item => {
+                           // destructruct nested object
+                           const {id, price, mainImage, agency} = item;
+                           const {logo, brandingColors: {primary}} = agency;
+
+                           return <CardItem key={id} id={id} price={price} mainImage={mainImage} logo={logo} primary={primary} />;
+                        })
                      }                  
                   </Container>
+               </Col>
+               <Col>
+                  <Container>
+                     <Row style={{justifyContent: "center"}}>
+                        Saved Properties
+                     </Row>
+                     {
+                        this.props.saved.map(item => {
+                           // destructruct nested object
+                           const {id, price, mainImage, agency} = item;
+                           const {logo, brandingColors: {primary}} = agency;
+
+                           return <CardItem key={id} id={id} price={price} mainImage={mainImage} logo={logo} primary={primary} />;
+                        })
+                     }                  
+                  </Container>                  
                </Col>
             </Row>
          </Container>
