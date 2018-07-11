@@ -9,7 +9,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './CardItem.css';
 
-const CardIem = ({id, price, mainImage, logo, primary}) => {
+const CardItem = ({id, cardItem}) => {
+   const { primary, logo, mainImage, price } = cardItem;
+
    return (
       <div className="cardStyle">
          <Card>
@@ -25,4 +27,4 @@ const CardIem = ({id, price, mainImage, logo, primary}) => {
    );
 };
 
-export default CardIem;
+export default CardItem;

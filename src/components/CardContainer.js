@@ -11,15 +11,28 @@ const CardContainer = ({title, cardItems}) => {
          {                        
             cardItems.map(item => {
                // destructruct nested object
-               const {id, price, mainImage, agency} = item;
-               const {logo, brandingColors: {primary}} = agency;
-
-               return <CardItem key={id} id={id} price={price} mainImage={mainImage} logo={logo} primary={primary} />;
+               //const {id, price, mainImage, agency} = item;
+               //const {logo, brandingColors: {primary}} = agency;
+                  
+               return <CardItem key={item.id} cardItem={cardItem(item)} />;
             })
          }                  
          </Container>
       </div>
    );
 };
+
+const cardItem = (item) => {
+   const {agency} = item;
+   const {logo, brandingColors: {primary}} = agency;
+
+   return {
+      id: item.id,
+      price: item.price,
+      mainImage: item.mainImage,
+      logo,
+      primary
+   };
+}
 
 export default CardContainer;

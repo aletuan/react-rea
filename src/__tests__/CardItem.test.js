@@ -7,13 +7,14 @@ describe('CardItem layout test', () => {
 
    let wrapper;
    let item = {
-      logo: "abc",
-      mainImage: "abc",
-      price: "$123,789"
+         primary: "#fff",
+         logo: "abc",
+         mainImage: "abc",
+         price: "$123,789"      
    };
 
    beforeEach(() => {
-      wrapper = shallow(<CardIem logo={item.logo} mainImage={item.mainImage} price={item.price} />);
+      wrapper = shallow(<CardIem key="1" cardItem={item} />);
    });
 
    it('should display logo', () => {
