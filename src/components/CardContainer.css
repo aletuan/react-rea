@@ -1,0 +1,10 @@
+.cardContainerHeaderStyle {
+   display: flex;
+   justify-content: center;
+}
+
+.cardContainerBodyStyle {
+   border-style: dotted;
+   border-width: 1px;
+}
+
