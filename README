@@ -7,6 +7,8 @@ Require to display items list with some properties and operation to add / remove
 - React 16.4
 - Redux 4.0
 - ES6
+- CI/CD: Circle CI, Heroku
+- Testing: Jest, Enzyme
 
 ##Features
 - Display the list of properties (items) using a data set provided by JSON input
