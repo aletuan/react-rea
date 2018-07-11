@@ -11,7 +11,7 @@ import './CardItem.css';
 
 const CardIem = ({id, price, mainImage, logo, primary}) => {
    return (
-      <div  className="cardStyle">
+      <div className="cardStyle">
          <Card>
             <CardHeader className="cardHeaderStyle" style={{background:primary}}>
                <CardImg className="cardLogoStyle" src={logo} />

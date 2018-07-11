@@ -25,6 +25,9 @@ tags
 # NPM packages folder.
 node_modules/
 
+# Coverage report folder
+coverage
+
 # Brunch folder for temporary files.
 tmp/
 

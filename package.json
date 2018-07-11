@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   },
   "keywords": [],
