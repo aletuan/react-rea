@@ -9,7 +9,5 @@ import reducer from './reducers';
 
 ReactDOM.render(
 <Provider store={createStore(reducer)}>
-   <CardContainer>
-      <CardItem />
-   </CardContainer>
+   <CardContainer />
 </Provider> ,document.getElementById("index"));

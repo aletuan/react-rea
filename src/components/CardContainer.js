@@ -14,25 +14,10 @@ class CardContainer extends Component {
                      <Row style={{justifyContent: "center"}}>
                         Results
                      </Row>
-                     <Row>
-                        <Col>{this.props.children}</Col>
-                     </Row>
-                     <Row mb="2">
-                        <Col>{this.props.children}</Col>
-                     </Row>
-                     <Row>
-                        <Col>{this.props.children}</Col>
-                     </Row>                         
-                  </Container>
-               </Col>
-               <Col>
-                  <Container>
-                     <Row style={{justifyContent: "center"}}>
-                        Saved Properties
-                     </Row>
-                     <Row>
-                        <Col>{this.props.children}</Col>
-                     </Row>                         
+                     {
+                        this.props.results.map(({id, price, mainImage, agency: {logo}}) => 
+                        <CardItem id={id} price={price} mainImage={mainImage} logo={logo} />)
+                     }                  
                   </Container>
                </Col>
             </Row>
