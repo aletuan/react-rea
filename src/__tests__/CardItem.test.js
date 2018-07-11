@@ -23,7 +23,7 @@ describe('CardItem layout test', () => {
    });
 
    it('should display main image', () => {
-      const answer = wrapper.find('CardBody');
+      const answer = wrapper.find(CardBody);
       expect(answer.find(CardImg).prop('src')).toBe(item.mainImage);
    });
 
