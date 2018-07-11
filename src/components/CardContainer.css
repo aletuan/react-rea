@@ -6,5 +6,7 @@
 .cardContainerBodyStyle {
    border-style: dotted;
    border-width: 1px;
+   border-color: coral;
+   border-radius: 10px;
 }
 
