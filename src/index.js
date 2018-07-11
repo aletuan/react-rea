@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CardContainer from "./components/CardContainer";
+import PageContainer from "./components/PageContainer";
 import CardItem from "./components/CardItem";
 
 import { Provider } from 'react-redux';
@@ -9,5 +9,5 @@ import reducer from './reducers';
 
 ReactDOM.render(
 <Provider store={createStore(reducer)}>
-   <CardContainer />
+   <PageContainer />
 </Provider> ,document.getElementById("index"));
