@@ -3,6 +3,11 @@
 ## Description
 Require to display items list with some properties and operation to add / remove item from a list
 
+## Technologies stack
+- React 16.4
+- Redux 4.0
+- ES6
+
 ##Features
 - Display the list of properties (items) using a data set provided by JSON input
 - The pages includes two lists, one for Result, and one for Saved Properties
