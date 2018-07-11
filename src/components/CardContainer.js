@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Row, Col, CardColumns } from 'reactstrap';
+import { Container, Row, Col, CardColumns, Card, CardHeader, CardBody} from 'reactstrap';
 import CardItem from './CardItem';
 
 import { connect } from 'react-redux';
@@ -10,11 +10,9 @@ class CardContainer extends Component {
          <Container>
             <Row>
                <Col>
-                  <Container>
-                     <Row style={{justifyContent: "center"}}>
-                        Results
-                     </Row>
-                     {
+                  <div style={{display: "flex", justifyContent: "center"}}>Results</div>
+                  <Container style={{borderStyle: "dotted", borderWidth: "1px"}}>
+                     {                        
                         this.props.results.map(item => {
                            // destructruct nested object
                            const {id, price, mainImage, agency} = item;
@@ -26,10 +24,8 @@ class CardContainer extends Component {
                   </Container>
                </Col>
                <Col>
-                  <Container>
-                     <Row style={{justifyContent: "center"}}>
-                        Saved Properties
-                     </Row>
+                  <div style={{display: "flex", justifyContent: "center"}}>Saved Properties</div>
+                  <Container style={{borderStyle: "dotted", borderWidth: "1px"}}>
                      {
                         this.props.saved.map(item => {
                            // destructruct nested object
