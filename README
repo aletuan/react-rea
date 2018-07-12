@@ -1,23 +1,41 @@
-#Coding Project
+#Coding PoC
 
-## Description
-Require to display items list with some properties and operation to add / remove item from a list
+##Description
 
-## Technologies stack
+Require to display items list of properties with some attributes and operation to add / remove item from a list
+
+##Features
+
+Followings are the details requirement of the poc (proof of concept):
+
+- Display the list of properties (items) using a data set provided by JSON input
+
+- The pages includes two lists, one for Results, and one for Saved Properties
+
+- Using hover button (display in center of each item) to remove / or add items between two lists
++ Button in Results column, display "Add property"
++ Button in Saved Properties column, display "Remove property"
+
+- Each item / or properties includes following attributes
++ Logo (header)
++ Background color (header)
++ Image (body)
++ Pricing (footer)
+
+##Solution
+- Loading data from json file to initial state
+- Redux had initial state, include two sets, one for items in Results and one for item in Saved Properties. 
+- Each item is represented by a CardItem component, each set (containing list of item) represented by CardContainer.
+- PageContainer manage two CardContainer, connect with Redux, mapping state to get data from Redux
+- CardItem can dispatch action to Redux store, indicate when user select or remove property
+
+##Technologies stack
+
 - React 16.4
 - Redux 4.0
 - ES6
+- Bootstrap UI (Reactstrap)
 - CI/CD: Circle CI, Heroku
 - Testing: Jest, Enzyme
 - Deploy Heroku: https://mysterious-dusk-60648.herokuapp.com/
-
-##Features
-- Display the list of properties (items) using a data set provided by JSON input
-- The pages includes two lists, one for Result, and one for Saved Properties
-- Using hover button to remove / or add items between two lists
-- Each item / or properties includes:
-+ Logo (heading)
-+ Background color (heading)
-+ Image
-+ Pricing
 
