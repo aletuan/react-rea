@@ -18,7 +18,7 @@ const CardContainer = ({title, cardItems}) => {
 
 // get category of properties
 // FIXME: should not using string literal
-const getCategory = (title) => (title === "Results") ? "result" : "saved";
+const getCategory = (title) => (title === "Results") ? "results" : "saved";
 
 // destructruct nested object
 const cardItem = (item) => {

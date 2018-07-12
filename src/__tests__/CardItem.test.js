@@ -14,7 +14,7 @@ describe('CardItem layout test', () => {
    };
 
    beforeEach(() => {
-      wrapper = shallow(<CardIem key="1" cardItem={item} />);
+      wrapper = shallow(<CardIem key="1" cardItem={item} category="results" />);
    });
 
    it('should display logo', () => {
@@ -31,4 +31,14 @@ describe('CardItem layout test', () => {
       const answer = wrapper.find('.cardFooterStyle');
       expect(answer.children().text()).toBe(item.price);
    });
+
+   it('should render button with correct title', () => {
+      const answer = wrapper.find('.cardButtonStyle');
+      expect(answer.children().text()).toBe("Add property");
+
+      let wrapperSaved = shallow(<CardIem key="1" cardItem={item} category="saved" />);
+      const answerSaved = wrapperSaved.find('.cardButtonStyle');
+      expect(answerSaved.children().text()).toBe("Remove property");
+   });
+
 });

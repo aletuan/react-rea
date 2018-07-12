@@ -14,7 +14,7 @@ const CardItem = ({id, cardItem, category}) => {
    const { cardId, primary, logo, mainImage, price } = cardItem;
 
    const addItem = () => {
-      if (category === "result") {
+      if (category === "results") {
          console.log("addItem");  
       } else {
          console.log("removeItem");
@@ -40,6 +40,6 @@ const CardItem = ({id, cardItem, category}) => {
 };
 
 // helper function
-const buttonContent = (category) => category === "result" ? "Add property" : "Remove property";
+const buttonContent = (category) => category === "results" ? "Add property" : "Remove property";
 
 export default CardItem;
