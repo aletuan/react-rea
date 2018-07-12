@@ -18,6 +18,7 @@ const CardItem = (props) => {
    const { cardId, primary, logo, mainImage, price } = cardItem;
 
    const handleOnClick = () => {
+      console.log('--> cat ' + category);
       if (category === "results") {
          props.onClickAddProperty(cardId);  
       } else {

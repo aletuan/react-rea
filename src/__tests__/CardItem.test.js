@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CardIem from '../components/CardItem';
-import { CardBody, CardImg } from 'reactstrap';
+import { CardBody, CardImg, Button } from 'reactstrap';
 import configureStore from 'redux-mock-store';
 
 describe('CardItem layout test', () => {
@@ -45,6 +45,17 @@ describe('CardItem layout test', () => {
    it('should render button with correct title', () => {
       const answer = wrapper.find('.cardButtonStyle');
       expect(answer.children().text()).toBe("Add property");
+   });
+
+   it('should handle click event', () => {
+      const answer = wrapper.find(Button);
+      const prevProp = wrapper.props();      
+
+      //simulate onclick on Results item
+      answer.simulate('click');
+      wrapper.update();
+
+      expect(answer.children().text()).toBe("Remove propety");
    });
 
 });
