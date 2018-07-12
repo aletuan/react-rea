@@ -10,12 +10,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './CardItem.css';
 
-const CardItem = ({id, cardItem}) => {
+const CardItem = ({id, cardItem, category}) => {
    const { cardId, primary, logo, mainImage, price } = cardItem;
 
-   const addCard = () => {
-      console.log("addCard");
-      // sending action ADD
+   const addItem = () => {
+      if (category === "result") {
+         console.log("addItem");  
+      } else {
+         console.log("removeItem");
+      }    
    }
 
    return (
@@ -27,7 +30,7 @@ const CardItem = ({id, cardItem}) => {
             <CardBody>
                <div className="cardImageStyle">
                   <CardImg top width="100%" src={mainImage} alt="Card image cap" />
-                  <Button className="cardButtonStyle" onClick={addCard}>Select</Button>
+                  <Button className="cardButtonStyle" onClick={addItem}>{buttonContent(category)}</Button>
                </div>
             </CardBody>
             <CardFooter className="cardFooterStyle">{price}</CardFooter>
@@ -35,5 +38,8 @@ const CardItem = ({id, cardItem}) => {
       </div>
    );   
 };
+
+// helper function
+const buttonContent = (category) => category === "result" ? "Add property" : "Remove property";
 
 export default CardItem;

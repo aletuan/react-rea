@@ -9,12 +9,16 @@ const CardContainer = ({title, cardItems}) => {
          <div className="cardContainerHeaderStyle">{title}</div>
          <Container className="cardContainerBodyStyle">
          {                        
-            cardItems.map(item => <CardItem key={item.id} cardItem={cardItem(item)} />)
+            cardItems.map(item => <CardItem key={item.id} cardItem={cardItem(item)} category={getCategory(title)} />)
          }                  
          </Container>
       </div>
    );
 };
+
+// get category of properties
+// FIXME: should not using string literal
+const getCategory = (title) => (title === "Results") ? "result" : "saved";
 
 // destructruct nested object
 const cardItem = (item) => {
