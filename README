@@ -9,6 +9,7 @@ Require to display items list with some properties and operation to add / remove
 - ES6
 - CI/CD: Circle CI, Heroku
 - Testing: Jest, Enzyme
+- Deploy Heroku: https://mysterious-dusk-60648.herokuapp.com/
 
 ##Features
 - Display the list of properties (items) using a data set provided by JSON input

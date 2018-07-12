@@ -39,9 +39,9 @@ describe('PageContainer layout test', () => {
    });
 
    it('should have two columns of properties', ()=> {
-      const wrapper = shallow(<PageContainer store={store} />);
-      const answer = wrapper.html().match(/cardContainerHeaderStyle/g).length;
-      expect(answer).toBe(2);
+      const wrapper = shallow(<PageContainer store={store} />).dive();
+      const answer = wrapper.find(CardContainer);
+      expect(answer.length).toEqual(2);
    });
 
 });

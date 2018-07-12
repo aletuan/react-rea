@@ -10,14 +10,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './CardItem.css';
 
-const CardItem = ({id, cardItem, category}) => {
+import { connect } from 'react-redux';
+import { addItemSaved, removeItemSaved } from '../actions'
+
+const CardItem = (props) => {
+   const {id, cardItem, category} = props;
    const { cardId, primary, logo, mainImage, price } = cardItem;
 
-   const addItem = () => {
+   const handleOnClick = () => {
       if (category === "results") {
-         console.log("addItem");  
+         props.onClickAddProperty(cardId);  
       } else {
-         console.log("removeItem");
+         props.onClickRemoveProperty(cardId);
       }    
    }
 
@@ -30,7 +34,10 @@ const CardItem = ({id, cardItem, category}) => {
             <CardBody>
                <div className="cardImageStyle">
                   <CardImg top width="100%" src={mainImage} alt="Card image cap" />
-                  <Button className="cardButtonStyle" onClick={addItem}>{buttonContent(category)}</Button>
+                  <Button className="cardButtonStyle" 
+                     onClick={handleOnClick}>
+                     {buttonContent(category)}
+                  </Button>
                </div>
             </CardBody>
             <CardFooter className="cardFooterStyle">{price}</CardFooter>
@@ -42,4 +49,9 @@ const CardItem = ({id, cardItem, category}) => {
 // helper function
 const buttonContent = (category) => category === "results" ? "Add property" : "Remove property";
 
-export default CardItem;
+const mapDispatchToProps = {
+   onClickAddProperty: addItemSaved,
+   onClickRemoveProperty: removeItemSaved
+};
+
+export default connect(null, mapDispatchToProps)(CardItem) ;
