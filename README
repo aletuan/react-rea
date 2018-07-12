@@ -26,8 +26,9 @@ Followings are the details requirement of the poc (proof of concept):
 - Loading data from json file to initial state
 - Redux had initial state, include two sets, one for items in Results and one for item in Saved Properties. 
 - Each item is represented by a CardItem component, each set (containing list of item) represented by CardContainer.
-- PageContainer manage two CardContainer, connect with Redux, mapping state to get data from Redux
+- PageContainer manages two CardContainer, connect with Redux, mapping state to get data from Redux
 - CardItem can dispatch action to Redux store, indicate when user select or remove property
+- Since data is separated into two states, using QueryItem to query item from data.json. The json file play roles as database in actual application.
 
 ##Technologies stack
 
