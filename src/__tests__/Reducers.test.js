@@ -1,5 +1,6 @@
 import configureStore from 'redux-mock-store';
 import combineReducers from '../reducers';
+import { addItemSaved, removeItemSaved } from '../actions';
 import data from '../reducers/data.json';
 
 describe('Testing reducers', () => {
@@ -18,9 +19,20 @@ describe('Testing reducers', () => {
    it('should loading initial items from json', () => {
       const action = { type: 'loading_action' };
       // need to confirm loading state
-      //expect(ResultsReducer(undefined, action)).toEqual(initialState.results);
-      //expect(SavedReducer(undefined, action)).toEqual(initialState.saved);
       expect(combineReducers(undefined, action)).toEqual(initialState);
+   });
+
+   it('should add item to saved list', () => {
+      let action = addItemSaved(1);
+      
+      let item = data.results.filter(item => item.id == action.payload);
+
+      let expectedState = {
+         results: data.results.filter(item => item.id != action.payload),
+         saved: data.saved.concat(item)
+      };      
+
+      expect(combineReducers(initialState, action)).toEqual(expectedState);
    });
 
 });
