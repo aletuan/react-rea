@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'reactstrap';
 import {CardContainer} from './CardContainer';
 
 import { connect } from 'react-redux';
+import { addItemSaved, removeItemSaved } from '../actions'
 
 class PageContainer extends Component {
    render() {
@@ -28,4 +29,4 @@ const mapStateToProps = state => {
    };
 };
 
-export default connect(mapStateToProps)(PageContainer);
+export default connect(mapStateToProps, {addItemSaved, removeItemSaved})(PageContainer);

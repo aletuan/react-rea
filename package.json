@@ -8,7 +8,7 @@
     "test-dev": "react-scripts test --env=jsdom --coverage --watch",
     "start": "npm run build && NODE_ENV=production node server.js",
     "build": "webpack --mode production",
-    "test": "jest test --env=jsdom --coverage",
+    "test": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
   },
   "keywords": [],
