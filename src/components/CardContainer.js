@@ -8,8 +8,13 @@ const CardContainer = ({title, cardItems}) => {
       <div>
          <div className="cardContainerHeaderStyle">{title}</div>
          <Container className="cardContainerBodyStyle">
-         {                        
-            cardItems.map(item => <CardItem key={item.id} cardItem={cardItem(item)} category={getCategory(title)} />)
+         {
+            cardItems.sort( (a,b) => (a.id <= b.id) ? -1 : 1)
+               .map(item => 
+                  <CardItem key={item.id} 
+                           cardItem={cardItem(item)} 
+                           category={getCategory(title)} />
+            )
          }                  
          </Container>
       </div>
