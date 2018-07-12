@@ -35,4 +35,17 @@ describe('Testing reducers', () => {
       expect(combineReducers(initialState, action)).toEqual(expectedState);
    });
 
+   it('should remove item from saved list', () => {
+      let action = removeItemSaved(4);
+      
+      let item = data.saved.filter(item => item.id == action.payload);
+
+      let expectedState = {
+         results: data.results.concat(item),
+         saved: data.saved.filter(item => item.id != action.payload)
+      };      
+
+      expect(combineReducers(initialState, action)).toEqual(expectedState);
+   });   
+
 });
